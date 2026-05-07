@@ -41,6 +41,75 @@
           </div>
         </div>
       </section>
+
+      <div class="flow-section">
+        <h3 class="flow-title">End-to-end flow</h3>
+        <div class="flowchart">
+
+          <div class="flow-node flow-node--start">
+            <span class="flow-icon">✦</span>
+            <span>You create an issue<br>in Linear</span>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+
+          <div class="flow-node">
+            <span class="flow-icon">🏷</span>
+            <span>Add the <strong>agent</strong> label</span>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+
+          <div class="flow-node">
+            <span class="flow-icon">📡</span>
+            <span>Webhook triggers<br>background agent</span>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+
+          <div class="flow-node">
+            <span class="flow-icon">🔍</span>
+            <span>Agent reads issue &amp;<br>explores the codebase</span>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+
+          <div class="flow-node">
+            <span class="flow-icon">⚙️</span>
+            <span>Implements changes,<br>runs build &amp; lint</span>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+
+          <div class="flow-node">
+            <span class="flow-icon">🔀</span>
+            <span>Pull request opened<br>with diff &amp; notes</span>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+
+          <div class="flow-node flow-node--decision">
+            <span class="flow-icon">👀</span>
+            <span>Your review</span>
+          </div>
+
+          <div class="flow-arrow flow-arrow--branch" aria-hidden="true">↓</div>
+
+          <div class="flow-node">
+            <span class="flow-icon">✅</span>
+            <span>Merge PR</span>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+
+          <div class="flow-node flow-node--end">
+            <span class="flow-icon">🚀</span>
+            <span>GitHub Actions deploys<br>the live site (~30 s)</span>
+          </div>
+
+        </div>
+      </div>
+
     </section>
   </main>
 
