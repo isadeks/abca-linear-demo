@@ -6,12 +6,13 @@
 }
 
 :root {
-  --accent: #5e60ce;
-  --text: #1a1a2e;
-  --muted: #555577;
-  --border: #d8d8e8;
-  --bg: #f8f8fc;
-  --card-bg: #ffffff;
+  --accent: #bd93f9;        /* nebula violet */
+  --accent-glow: #a56ef7;
+  --text: #ccd6f6;          /* starlight */
+  --muted: #8892b0;         /* dim starlight */
+  --border: #1e2a50;        /* deep-space border */
+  --bg: #030309;            /* deep space */
+  --card-bg: #0a0d1f;       /* slightly lit space */
   --radius: 12px;
   --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
@@ -23,6 +24,12 @@ html {
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
+  /* subtle star-field gradient */
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(100, 60, 180, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(30, 80, 160, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(80, 20, 120, 0.12) 0%, transparent 60%);
+  min-height: 100vh;
 }
 
 a {
@@ -157,16 +164,18 @@ a:hover {
 .flow-node--start {
   border-color: var(--accent);
   border-width: 2px;
+  box-shadow: 0 0 12px rgba(189, 147, 249, 0.2);
 }
 
 .flow-node--end {
   border-color: var(--accent);
   border-width: 2px;
-  background: color-mix(in srgb, var(--accent) 8%, var(--card-bg));
+  background: color-mix(in srgb, var(--accent) 10%, var(--card-bg));
+  box-shadow: 0 0 16px rgba(189, 147, 249, 0.25);
 }
 
 .flow-node--decision {
-  background: color-mix(in srgb, var(--accent) 5%, var(--card-bg));
+  background: color-mix(in srgb, var(--accent) 6%, var(--card-bg));
   border-style: dashed;
 }
 
