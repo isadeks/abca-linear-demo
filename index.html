@@ -10,62 +10,37 @@
 <body>
   <header class="hero">
     <p class="eyebrow">ABCA × Linear</p>
-    <h1>Ship code from your<br>Linear backlog — automatically</h1>
-    <p class="lede">ABCA (Autonomous Background Coding Agent) connects to Linear and turns labelled issues into pull requests with zero human prompting.</p>
-    <div class="hero-actions">
-      <a href="https://github.com/isadeks/abca-linear-demo" class="btn-primary">View on GitHub</a>
-      <a href="#how-it-works" class="btn-secondary">See how it works ↓</a>
-    </div>
+    <h1>Autonomous code changes,<br>driven by your backlog</h1>
+    <p class="lede">Connect Linear to an AI coding agent — watch issues ship as pull requests, automatically.</p>
   </header>
 
   <main>
-
-    <!-- Before you start -->
-    <section class="prereqs-wrapper">
-      <div class="prereqs">
-        <h2>Before you start</h2>
-        <p class="section-intro">You'll need three things in place before the agent can do its first run:</p>
-        <ol class="prereq-list">
-          <li>
-            <strong>A Linear workspace</strong> with a label named exactly <span class="label-badge">agent</span> — create it in <em>Settings → Labels</em>.
-          </li>
-          <li>
-            <strong>A GitHub repository</strong> that ABCA has read/write access to (via a GitHub token in your environment).
-          </li>
-          <li>
-            <strong>A running ABCA instance</strong> — clone <a href="https://github.com/isadeks/abca-linear-demo">this repo</a>, fill in the <code>.env</code> with your Linear and GitHub tokens, then start the server.
-          </li>
-        </ol>
-        <p class="prereq-note">💡 New here? <a href="https://github.com/isadeks/abca-linear-demo#readme">Read the README</a> for a full setup walkthrough.</p>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="how-it-works" id="how-it-works">
+    <section class="how-it-works">
       <h2>How it works</h2>
-
-      <div class="cards">
-        <div class="card">
-          <span class="card-number">01</span>
-          <h3>Label an issue</h3>
-          <p>Add the <span class="label-badge">agent</span> label to any Linear issue. That's the only signal the agent needs — no prompting required.</p>
+      <section class="how-it-works">
+        <div class="cards">
+          <div class="card">
+            <span class="card-number">01</span>
+            <h3>Label an issue</h3>
+            <p>Add the <strong>agent</strong> label to any Linear issue. That's all the signal the agent needs to get started.</p>
+          </div>
+          <div class="card">
+            <span class="card-number">02</span>
+            <h3>Agent picks it up</h3>
+            <p>The background agent reads the issue, explores the codebase, and autonomously implements the required changes.</p>
+          </div>
+          <div class="card">
+            <span class="card-number">03</span>
+            <h3>PR opens</h3>
+            <p>A pull request is created with a full diff, build results, and notes — ready for your review and one-click merge.</p>
+          </div>
+          <div class="card">
+            <span class="card-number">04</span>
+            <h3>Merge to deploy</h3>
+            <p>Merging the PR triggers the GitHub Actions workflow and the live site updates within ~30 seconds.</p>
+          </div>
         </div>
-        <div class="card">
-          <span class="card-number">02</span>
-          <h3>Agent picks it up</h3>
-          <p>Within seconds a background agent receives the webhook, reads the issue title and description, then explores your codebase to understand the context.</p>
-        </div>
-        <div class="card">
-          <span class="card-number">03</span>
-          <h3>PR opens</h3>
-          <p>A pull request is opened with a full diff, build &amp; lint results, and plain-English notes explaining every decision — ready for your one-click review.</p>
-        </div>
-        <div class="card">
-          <span class="card-number">04</span>
-          <h3>Merge to deploy</h3>
-          <p>Approve and merge the PR. GitHub Actions runs automatically and the live site is updated within ~30 seconds. Done.</p>
-        </div>
-      </div>
+      </section>
 
       <div class="flow-section">
         <h3 class="flow-title">End-to-end flow</h3>
@@ -73,67 +48,49 @@
 
           <div class="flow-node flow-node--start">
             <span class="flow-icon">✦</span>
-            <span>
-              You create an issue in Linear
-              <small>Describe the desired outcome in the title &amp; description</small>
-            </span>
+            <span>You create an issue<br>in Linear</span>
           </div>
 
           <div class="flow-arrow" aria-hidden="true">↓</div>
 
           <div class="flow-node">
             <span class="flow-icon">🏷</span>
-            <span>Add the <span class="label-badge">agent</span> label</span>
+            <span>Add the <strong>agent</strong> label</span>
           </div>
 
           <div class="flow-arrow" aria-hidden="true">↓</div>
 
           <div class="flow-node">
             <span class="flow-icon">📡</span>
-            <span>
-              Webhook triggers background agent
-              <small>Usually within 2–5 seconds</small>
-            </span>
+            <span>Webhook triggers<br>background agent</span>
           </div>
 
           <div class="flow-arrow" aria-hidden="true">↓</div>
 
           <div class="flow-node">
             <span class="flow-icon">🔍</span>
-            <span>
-              Agent reads issue &amp; explores codebase
-              <small>No prior codebase knowledge needed from you</small>
-            </span>
+            <span>Agent reads issue &amp;<br>explores the codebase</span>
           </div>
 
           <div class="flow-arrow" aria-hidden="true">↓</div>
 
           <div class="flow-node">
             <span class="flow-icon">⚙️</span>
-            <span>
-              Implements changes, runs build &amp; lint
-              <small>Fixes its own errors before opening a PR</small>
-            </span>
+            <span>Implements changes,<br>runs build &amp; lint</span>
           </div>
 
           <div class="flow-arrow" aria-hidden="true">↓</div>
 
           <div class="flow-node">
             <span class="flow-icon">🔀</span>
-            <span>
-              Pull request opened with diff &amp; notes
-              <small>A link appears in the Linear issue automatically</small>
-            </span>
+            <span>Pull request opened<br>with diff &amp; notes</span>
           </div>
 
           <div class="flow-arrow" aria-hidden="true">↓</div>
 
           <div class="flow-node flow-node--decision">
             <span class="flow-icon">👀</span>
-            <span>
-              <strong>Your review</strong>
-              <small>Read the notes, check the diff, approve when happy</small>
-            </span>
+            <span>Your review</span>
           </div>
 
           <div class="flow-arrow flow-arrow--branch" aria-hidden="true">↓</div>
@@ -147,50 +104,13 @@
 
           <div class="flow-node flow-node--end">
             <span class="flow-icon">🚀</span>
-            <span>
-              GitHub Actions deploys the live site
-              <small>~30 seconds from merge to live</small>
-            </span>
+            <span>GitHub Actions deploys<br>the live site (~30 s)</span>
           </div>
 
         </div>
       </div>
 
     </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-      <h2>Common questions</h2>
-      <div class="faq-list">
-
-        <details class="faq-item">
-          <summary>What does ABCA stand for?</summary>
-          <p>Autonomous Background Coding Agent — an AI agent that runs in the background, picks up coding tasks from Linear, and ships pull requests without any human prompting.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What kind of issues can the agent handle?</summary>
-          <p>Any issue with a clear title and description. The agent works best when you describe the <em>outcome</em> you want (e.g. "Add a FAQ section to the landing page") rather than spelling out exact implementation steps. It figures out the how.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens if the build fails?</summary>
-          <p>The agent tries to fix its own errors before opening a PR. If it can't resolve them after several attempts, it opens the PR anyway with a note explaining what failed and why — so you always have full visibility into what happened.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I give the agent feedback or ask for changes?</summary>
-          <p>Yes. Update the Linear issue description with new instructions, then remove the <span class="label-badge">agent</span> label and re-add it to trigger a fresh run with the updated context.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is my code sent to a third party?</summary>
-          <p>The agent reads your repository to understand context and implement changes. Check the README and your ABCA configuration for details on which AI provider is used and how data is handled.</p>
-        </details>
-
-      </div>
-    </section>
-
   </main>
 
   <footer>
