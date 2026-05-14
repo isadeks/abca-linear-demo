@@ -192,6 +192,33 @@ a:hover {
   opacity: 0.6;
 }
 
+/* Safety section */
+.safety-section {
+  background: color-mix(in srgb, var(--accent) 6%, var(--card-bg));
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.safety-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.safety-inner h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.safety-inner p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 /* Footer */
 footer {
   text-align: center;
