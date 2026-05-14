@@ -174,11 +174,6 @@ a:hover {
   box-shadow: 0 0 16px rgba(79, 70, 229, 0.18);
 }
 
-.flow-node--decision {
-  background: color-mix(in srgb, var(--accent) 6%, var(--card-bg));
-  border-style: dashed;
-}
-
 .flow-icon {
   font-size: 1.25rem;
   flex-shrink: 0;
