@@ -74,6 +74,41 @@ a:hover {
   margin: 0 auto;
 }
 
+/* Why section */
+.why-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  background: color-mix(in srgb, var(--accent) 6%, var(--card-bg));
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+}
+
+.why-item {
+  text-align: center;
+}
+
+.why-stat {
+  display: block;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.why-item p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 /* How it works */
 .how-it-works {
   max-width: 960px;
@@ -100,6 +135,12 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2rem 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.12);
 }
 
 .card-number {
