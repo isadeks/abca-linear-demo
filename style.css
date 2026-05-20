@@ -6,14 +6,14 @@
 }
 
 :root {
-  --accent: #b48be6;           /* pastel lavender */
-  --accent-glow: #d4b8f5;      /* soft lilac */
-  --accent-cyan: #7ecfe0;      /* pastel sky blue */
-  --text: #3a3550;             /* soft dark plum */
-  --muted: #7a7090;            /* muted mauve */
-  --border: #dcd4f0;           /* light lavender border */
-  --bg: #f5f0ff;               /* soft lavender white */
-  --card-bg: #ffffff;          /* clean white card */
+  --accent: #b48be6;           /* lavender accent */
+  --accent-glow: #c9a3f0;      /* bright lilac glow */
+  --accent-cyan: #7ecfe0;      /* sky blue accent */
+  --text: #e8e3f5;             /* light lavender-white */
+  --muted: #9b95b8;            /* muted mid-purple */
+  --border: #2c2840;           /* dark lavender border */
+  --bg: #0d0c14;               /* near-black dark background */
+  --card-bg: #16141f;          /* dark card surface */
   --radius: 12px;
   --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
@@ -25,16 +25,16 @@ html {
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
-  /* soft pastel gradient */
+  /* dark mode radial glow */
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(180, 139, 230, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(126, 207, 224, 0.15) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 100%, rgba(212, 184, 245, 0.18) 0%, transparent 60%);
+    radial-gradient(ellipse at 20% 50%, rgba(180, 139, 230, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(126, 207, 224, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(180, 139, 230, 0.08) 0%, transparent 60%);
   min-height: 100vh;
 }
 
 a {
-  color: #6aa8d4;
+  color: #7ecfe0;
   text-decoration: underline;
 }
 
@@ -101,7 +101,7 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2rem 1.5rem;
-  box-shadow: 0 2px 8px rgba(180, 139, 230, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .card-number {
@@ -161,7 +161,7 @@ a:hover {
   line-height: 1.4;
   min-width: 260px;
   text-align: left;
-  box-shadow: 0 2px 6px rgba(180, 139, 230, 0.07);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .flow-node--start {
