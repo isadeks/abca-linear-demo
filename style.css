@@ -6,14 +6,14 @@
 }
 
 :root {
-  --accent: #7f5af0;           /* cosmic purple */
-  --accent-glow: #a78bfa;      /* nebula violet */
-  --accent-cyan: #22d3ee;      /* starlight cyan */
-  --text: #e8eaf6;             /* near-white starlight */
-  --muted: #8892b0;            /* deep space blue-grey */
-  --border: #1e2a4a;           /* dark nebula border */
-  --bg: #05071a;               /* deep space black */
-  --card-bg: #0d1224;          /* dark star field */
+  --accent: #b48be6;           /* pastel lavender */
+  --accent-glow: #d4b8f5;      /* soft lilac */
+  --accent-cyan: #7ecfe0;      /* pastel sky blue */
+  --text: #3a3550;             /* soft dark plum */
+  --muted: #7a7090;            /* muted mauve */
+  --border: #dcd4f0;           /* light lavender border */
+  --bg: #f5f0ff;               /* soft lavender white */
+  --card-bg: #ffffff;          /* clean white card */
   --radius: 12px;
   --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
@@ -25,16 +25,16 @@ html {
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
-  /* deep space nebula gradient */
+  /* soft pastel gradient */
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(127, 90, 240, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(34, 211, 238, 0.10) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 100%, rgba(167, 139, 250, 0.12) 0%, transparent 60%);
+    radial-gradient(ellipse at 20% 50%, rgba(180, 139, 230, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(126, 207, 224, 0.15) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(212, 184, 245, 0.18) 0%, transparent 60%);
   min-height: 100vh;
 }
 
 a {
-  color: var(--accent-cyan);
+  color: #6aa8d4;
   text-decoration: underline;
 }
 
@@ -56,7 +56,7 @@ a:hover {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-glow);
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 
@@ -101,6 +101,7 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(180, 139, 230, 0.08);
 }
 
 .card-number {
@@ -108,7 +109,7 @@ a:hover {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--accent-glow);
+  color: var(--accent);
   margin-bottom: 0.75rem;
 }
 
@@ -160,23 +161,24 @@ a:hover {
   line-height: 1.4;
   min-width: 260px;
   text-align: left;
+  box-shadow: 0 2px 6px rgba(180, 139, 230, 0.07);
 }
 
 .flow-node--start {
   border-color: var(--accent);
   border-width: 2px;
-  box-shadow: 0 0 12px rgba(127, 90, 240, 0.35);
+  box-shadow: 0 0 12px rgba(180, 139, 230, 0.25);
 }
 
 .flow-node--end {
   border-color: var(--accent-cyan);
   border-width: 2px;
   background: color-mix(in srgb, var(--accent-cyan) 8%, var(--card-bg));
-  box-shadow: 0 0 16px rgba(34, 211, 238, 0.30);
+  box-shadow: 0 0 16px rgba(126, 207, 224, 0.25);
 }
 
 .flow-node--decision {
-  background: color-mix(in srgb, var(--accent) 10%, var(--card-bg));
+  background: color-mix(in srgb, var(--accent) 8%, var(--card-bg));
   border-style: dashed;
   border-color: var(--accent-glow);
 }
@@ -188,10 +190,10 @@ a:hover {
 
 .flow-arrow {
   font-size: 1.4rem;
-  color: var(--accent-glow);
+  color: var(--accent);
   line-height: 1;
   padding: 0.15rem 0;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 /* Footer */
