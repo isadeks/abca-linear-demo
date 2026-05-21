@@ -6,14 +6,14 @@
 }
 
 :root {
-  --accent: #b48be6;           /* lavender */
-  --accent-glow: #8b5cf6;      /* violet glow */
-  --accent-cyan: #22d3ee;      /* cyan */
-  --text: #e2dff0;             /* light lavender text */
-  --muted: #9993b8;            /* muted lavender */
-  --border: #2e2a45;           /* dark border */
-  --bg: #0f0d1a;               /* deep dark background */
-  --card-bg: #1a1730;          /* dark card */
+  --accent: #60a5fa;           /* blue */
+  --accent-glow: #3b82f6;      /* blue glow */
+  --accent-cyan: #38bdf8;      /* sky blue */
+  --text: #dbeafe;             /* light blue text */
+  --muted: #93c5fd;            /* muted blue */
+  --border: #1e3a5f;           /* dark blue border */
+  --bg: #0a0f1a;               /* deep dark background */
+  --card-bg: #0f1e35;          /* dark blue card */
   --radius: 12px;
   --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
@@ -27,14 +27,14 @@ html {
   background: var(--bg);
   /* dark mode ambient glow */
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(139, 92, 246, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(34, 211, 238, 0.08) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 100%, rgba(180, 139, 230, 0.10) 0%, transparent 60%);
+    radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(96, 165, 250, 0.10) 0%, transparent 60%);
   min-height: 100vh;
 }
 
 a {
-  color: #7ecfe0;
+  color: #60a5fa;
   text-decoration: underline;
 }
 
@@ -167,14 +167,14 @@ a:hover {
 .flow-node--start {
   border-color: var(--accent);
   border-width: 2px;
-  box-shadow: 0 0 16px rgba(180, 139, 230, 0.35);
+  box-shadow: 0 0 16px rgba(96, 165, 250, 0.35);
 }
 
 .flow-node--end {
   border-color: var(--accent-cyan);
   border-width: 2px;
   background: color-mix(in srgb, var(--accent-cyan) 10%, var(--card-bg));
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
 }
 
 .flow-node--decision {
