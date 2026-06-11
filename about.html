@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — ABCA × Linear Demo</title>
+  <meta name="description" content="About the ABCA × Linear Demo project — autonomous code changes driven by your backlog." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">ABCA × Linear</p>
+    <h1>About this project</h1>
+    <p class="lede">Learn more about the ABCA × Linear Demo and how autonomous coding agents work with your backlog.</p>
+  </header>
+
+  <main>
+    <section class="about">
+      <p>ABCA (Autonomous Background Coding Agent) is an AI-powered agent that integrates with Linear to automatically implement issues as pull requests. By labelling a Linear issue with <strong>agent</strong>, you hand off implementation to the agent — which reads the issue, explores the codebase, makes the necessary code changes, and opens a pull request for your review. The goal is to remove repetitive toil from your workflow so that your team can focus on decisions, not mechanics.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="footer-year"></span> &mdash; <a href="https://github.com/isadeks/abca-linear-demo">github.com/isadeks/abca-linear-demo</a></p>
+  </footer>
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
