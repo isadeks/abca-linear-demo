@@ -196,6 +196,15 @@ a:hover {
   opacity: 0.5;
 }
 
+/* Mission body */
+.mission-body {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
 /* Footer */
 footer {
   text-align: center;
