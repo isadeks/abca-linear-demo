@@ -8,6 +8,31 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Authentication gate -->
+  <div id="auth-overlay" class="auth-overlay" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+    <div class="auth-card">
+      <p class="eyebrow">ABCA × Linear</p>
+      <h2 id="auth-title">Sign in to continue</h2>
+      <p class="auth-desc">This demo is password-protected.</p>
+      <form id="auth-form" class="auth-form" novalidate>
+        <div class="auth-field">
+          <label for="auth-password">Password</label>
+          <input
+            type="password"
+            id="auth-password"
+            name="password"
+            autocomplete="current-password"
+            placeholder="Enter password"
+            required
+          />
+        </div>
+        <p id="auth-error" class="auth-error" aria-live="polite" hidden>Incorrect password. Please try again.</p>
+        <button type="submit" class="auth-btn">Sign in</button>
+      </form>
+    </div>
+  </div>
+
   <header class="hero">
     <p class="eyebrow">ABCA × Linear</p>
     <h1>Autonomous code changes,<br>driven by your backlog</h1>
@@ -117,5 +142,62 @@
     <p>© <span id="footer-year"></span> &mdash; <a href="https://github.com/isadeks/abca-linear-demo">github.com/isadeks/abca-linear-demo</a></p>
   </footer>
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+  <script>
+    (function () {
+      var SESSION_KEY = 'abca_demo_auth';
+      // Password is stored as a SHA-256 hex digest so it is not in plain text.
+      // Hash of "demo" — change this value to protect with a different password.
+      var PASSWORD_HASH = '2a97516c354b68848cdbd8f54a226a0a55b21ed138e207ad6c5cbb9c00aa5aea';
+
+      function hexHash(str) {
+        var buf = new TextEncoder().encode(str);
+        return crypto.subtle.digest('SHA-256', buf).then(function (hashBuf) {
+          return Array.from(new Uint8Array(hashBuf))
+            .map(function (b) { return b.toString(16).padStart(2, '0'); })
+            .join('');
+        });
+      }
+
+      var overlay = document.getElementById('auth-overlay');
+      var form    = document.getElementById('auth-form');
+      var input   = document.getElementById('auth-password');
+      var errMsg  = document.getElementById('auth-error');
+
+      function unlock() {
+        overlay.classList.add('auth-overlay--hidden');
+        // Remove from DOM after transition so it is not reachable via Tab
+        overlay.addEventListener('transitionend', function () {
+          overlay.remove();
+        }, { once: true });
+        sessionStorage.setItem(SESSION_KEY, '1');
+      }
+
+      // Already authenticated this session?
+      if (sessionStorage.getItem(SESSION_KEY) === '1') {
+        unlock();
+        return;
+      }
+
+      // Focus password field when overlay is visible
+      window.addEventListener('DOMContentLoaded', function () {
+        input.focus();
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var password = input.value;
+        hexHash(password).then(function (hash) {
+          if (hash === PASSWORD_HASH) {
+            errMsg.hidden = true;
+            unlock();
+          } else {
+            errMsg.hidden = false;
+            input.value = '';
+            input.focus();
+          }
+        });
+      });
+    }());
+  </script>
 </body>
 </html>
